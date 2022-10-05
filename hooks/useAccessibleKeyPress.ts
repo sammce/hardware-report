@@ -5,7 +5,7 @@
  */
 export default function useAccessibleKeyPress(
   callback: (event: React.KeyboardEvent) => unknown,
-  keys: string[] = ["Space", "Enter"]
+  keys: string[] = ['Space', 'Enter']
 ) {
   return (event: React.KeyboardEvent) => {
     event.preventDefault();

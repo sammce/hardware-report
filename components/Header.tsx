@@ -1,31 +1,27 @@
 import {
   Heading,
   useDisclosure,
-  Link,
   HStack,
-  Divider,
+  Link,
   useMediaQuery,
-} from "@chakra-ui/react";
-import Hamburger from "./Hamburger";
-import { useRef } from "react";
-import tv from "util/themeVariable";
-import Drawer from "./Drawer";
+} from '@chakra-ui/react';
+import Hamburger from './Hamburger';
+import { useRef } from 'react';
+import tv from 'util/themeVariable';
+import Drawer from './Drawer';
+import NextLink from 'next/link';
 
 const HeaderLink: React.FC<{ href: string }> = ({ href, children }) => {
-  const fullpath =
-    typeof window !== "undefined" ? window.location.pathname.split("/") : "";
-  let path = "";
+  const path = window.location.pathname;
 
-  if (fullpath) {
-    path = "./" + fullpath[fullpath.length - 1];
-  }
-
-  const color = href === path ? "secondary" : "blue.300";
+  const color = href === path ? 'secondary' : 'blue.300';
 
   return (
-    <Link tabIndex={1} color={color} borderRadius={6} px={2} href={href}>
-      {children}
-    </Link>
+    <NextLink href={href}>
+      <Link tabIndex={1} color={color} borderRadius={6} px={2}>
+        {children}
+      </Link>
+    </NextLink>
   );
 };
 
@@ -33,7 +29,7 @@ const Header = () => {
   const { isOpen, onClose, onToggle } = useDisclosure();
   const hamburgerRef = useRef<HTMLDivElement>(null);
 
-  const [isLg] = useMediaQuery("(min-width: 1024px)");
+  const [isLg] = useMediaQuery('(min-width: 1024px)');
 
   return (
     <>
@@ -49,7 +45,7 @@ const Header = () => {
         zIndex={1500}
         alignItems="center"
         bg="contrastBackground"
-        borderBottom={`1px solid ${tv("colors.gray.500")}`}
+        borderBottom={`1px solid ${tv('colors.gray.500')}`}
       >
         <HStack gap={2}>
           {!isLg && (
@@ -61,21 +57,20 @@ const Header = () => {
             />
           )}
 
-          <Link href="./index.html" borderRadius={6} px={2} tabIndex={1}>
-            <Heading onKeyDown={onClose}>vacuumba report</Heading>
-          </Link>
+          <NextLink href="/">
+            <Link borderRadius={6} px={2} tabIndex={1}>
+              <Heading onKeyDown={onClose}>CA103 - Hardware Report</Heading>
+            </Link>
+          </NextLink>
         </HStack>
 
         {isLg && (
           <HStack flexGrow={1} gap={6} justify="center">
-            <HeaderLink href="./plan.html">Investigation &amp; Plan</HeaderLink>
-            <HeaderLink href="./design.html">Design</HeaderLink>
-            <HeaderLink href="./implementation.html">
-              Implementation &amp; Testing
-            </HeaderLink>
-            <HeaderLink href="./evaluation.html">Evaluation</HeaderLink>
-            <Divider h="25px" w="1px" bg="gray.500" />
-            <HeaderLink href="./connect.html">Connect Four</HeaderLink>
+            <HeaderLink href="/">Home</HeaderLink>
+            <HeaderLink href="/internals">Internals</HeaderLink>
+            <HeaderLink href="/connectors">Connectors</HeaderLink>
+            <HeaderLink href="/types">Types</HeaderLink>
+            <HeaderLink href="/firmware">Firmware</HeaderLink>
           </HStack>
         )}
       </HStack>

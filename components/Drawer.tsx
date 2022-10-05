@@ -5,15 +5,15 @@ import {
   Text,
   Divider,
   Box,
-} from "@chakra-ui/react";
-import DrawerLink from "./DrawerLink";
-import { useRef } from "react";
+} from '@chakra-ui/react';
+import DrawerLink from './DrawerLink';
+import { useRef } from 'react';
 
-import BrushIcon from "@mui/icons-material/Brush";
-import CodeIcon from "@mui/icons-material/Code";
-import FindInPageIcon from "@mui/icons-material/FindInPage";
-import GridOnIcon from "@mui/icons-material/GridOn";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
+import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import CableIcon from '@mui/icons-material/Cable';
+import CodeIcon from '@mui/icons-material/Code';
+import HomeIcon from '@mui/icons-material/Home';
 
 interface DrawerProps {
   isOpen: boolean;
@@ -44,44 +44,31 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose, hamburgerRef }) => {
           h="full"
           pb={4}
         >
-          <Text variant="subheading">Stages</Text>
-          <DrawerLink
-            href="./plan.html"
-            onClose={onClose}
-            icon={<MenuBookIcon />}
-          >
-            Investigation &amp; Plan
+          <Text variant="subheading">Pages</Text>
+          <DrawerLink href="/" onClose={onClose} icon={<HomeIcon />}>
+            Home
           </DrawerLink>
           <DrawerLink
-            href="./design.html"
+            href="/internals"
             onClose={onClose}
-            icon={<BrushIcon />}
+            icon={<DeveloperBoardIcon />}
           >
-            Design
+            Internals
+          </DrawerLink>
+          <DrawerLink href="/connectors" onClose={onClose} icon={<CableIcon />}>
+            Connectors
           </DrawerLink>
           <DrawerLink
-            href="./implementation.html"
+            href="/types"
             onClose={onClose}
-            icon={<CodeIcon />}
+            icon={<FormatListBulletedIcon />}
           >
-            Implementation &amp; Test...
+            Types
           </DrawerLink>
-          <DrawerLink
-            href="./evaluation.html"
-            onClose={onClose}
-            icon={<FindInPageIcon />}
-          >
-            Evaluation
+          <DrawerLink href="/firmware" onClose={onClose} icon={<CodeIcon />}>
+            Firmware
           </DrawerLink>
           <Divider />
-          <Text variant="subheading">Bonus</Text>
-          <DrawerLink
-            href="./connect.html"
-            onClose={onClose}
-            icon={<GridOnIcon />}
-          >
-            Connect Four
-          </DrawerLink>
         </Box>
       </DrawerContent>
     </CDrawer>

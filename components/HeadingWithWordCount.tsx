@@ -1,13 +1,13 @@
-import { VStack, Text } from "@chakra-ui/react";
-import { useEffect, useRef, useState } from "react";
+import { VStack, Text } from '@chakra-ui/react';
+import { useEffect, useRef, useState } from 'react';
 
 const HeaderWithWordCount: React.FC = ({ children }) => {
   const [wordCount, setWordCount] = useState(0);
+  const [path, setPath] = useState<string | null>(null);
   const stackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.location.pathname.endsWith("index.html")) return;
-
+    setPath(window.location.pathname);
     const wrapper = stackRef.current!.parentElement;
 
     if (!wrapper) return;
@@ -15,12 +15,12 @@ const HeaderWithWordCount: React.FC = ({ children }) => {
     let wc = 0;
 
     for (const child of wrapper.children) {
-      if (child.tagName === "P") {
-        wc += child.innerHTML.split(" ").length;
-      } else if (child.tagName === "UL") {
+      if (child.tagName === 'P') {
+        wc += child.innerHTML.split(' ').length;
+      } else if (child.tagName === 'UL') {
         for (const _child of child.children) {
-          if (_child.tagName === "LI") {
-            wc += _child.innerHTML.split(" ").length;
+          if (_child.tagName === 'LI') {
+            wc += _child.innerHTML.split(' ').length;
           }
         }
       }
@@ -32,9 +32,21 @@ const HeaderWithWordCount: React.FC = ({ children }) => {
   return (
     <VStack ref={stackRef}>
       <h1 style={{ lineHeight: 1.2 }}>{children}</h1>
+      {path === '/' && (
+        <Text color="gray.500" fontSize="2xl">
+          By{' '}
+          <b>
+            <u>Sam McElligott</u>
+          </b>{' '}
+          &amp;{' '}
+          <b>
+            <u>Dylan Martin</u>
+          </b>
+        </Text>
+      )}
       {wordCount !== 0 && (
         <Text mt={0} color="gray.500" fontSize="2xl">
-          Word count:{" "}
+          This page's word count:{' '}
           <Text as="span" fontWeight="bold" color="primary">
             {wordCount}
           </Text>

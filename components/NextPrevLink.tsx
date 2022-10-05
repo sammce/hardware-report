@@ -1,6 +1,7 @@
-import { HStack, VStack, Text, Link } from "@chakra-ui/react";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { HStack, VStack, Text } from '@chakra-ui/react';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Link from 'next/link';
 
 interface Item {
   href: string;
@@ -13,33 +14,29 @@ interface NextPrevLinkProps {
 }
 
 const NextPrevLink: React.FC<NextPrevLinkProps> = ({ previous, next }) => {
-  let justify = "space-between";
+  let justify = 'space-between';
   if (previous && !next) {
-    justify = "flex-start";
+    justify = 'flex-start';
   } else if (!previous && next) {
-    justify = "flex-end";
+    justify = 'flex-end';
   }
 
   return (
     <HStack
-      flexDirection={{ base: "column", md: "row" }}
-      justify={{ base: "center", md: justify }}
+      flexDirection={{ base: 'column', md: 'row' }}
+      justify={{ base: 'center', md: justify }}
       gap={4}
       mb={8}
       align="center"
     >
       {previous && (
-        <Link
-          href={`./${previous.href}.html`}
-          style={{ textDecoration: "none" }}
-          borderRadius={8}
-        >
+        <Link href={previous.href}>
           <VStack
             borderRadius={8}
             py={4}
             px={12}
             bg="contrastBackground"
-            _hover={{ bg: "#35354c" }}
+            _hover={{ bg: '#35354c' }}
             transition="background-color .15s linear"
             cursor="pointer"
             align="flex-end"
@@ -58,17 +55,13 @@ const NextPrevLink: React.FC<NextPrevLinkProps> = ({ previous, next }) => {
       )}
 
       {next && (
-        <Link
-          href={`./${next.href}.html`}
-          style={{ textDecoration: "none" }}
-          borderRadius={8}
-        >
+        <Link href={next.href}>
           <VStack
             borderRadius={8}
             py={4}
             px={12}
             bg="contrastBackground"
-            _hover={{ bg: "#35354c" }}
+            _hover={{ bg: '#35354c' }}
             transition="background-color .15s linear"
             cursor="pointer"
             align="flex-start"
