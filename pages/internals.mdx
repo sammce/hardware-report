@@ -11,9 +11,12 @@ On this page we will be talking about what parts are inside of the monitor and h
 ## Pixels
 
 Pixels are the smallest controllable element of a picture displayed on a screen.
-Each pixel can produce a colour using different combinations of the colours red, green and blue, known as RGB.
+Each pixel can produce a colour using different combinations of the colours red, green and blue, known as _RGB_.
 Each RGB value is represented using an 8-bit number, meaning the resulting colour is a 24 bit (3 byte) number,
-which is capable of representing $2^{24}$, or 16.7 million colours. (_Wikipedia, 2022_ [^1])
+which is capable of representing $2^{24}$, or 16.7 million colours (_Wikipedia, 2022_ [^1]).
+Each image (or frame, when referring to moving content) is represented using a long list of these 24 bit numbers.
+The screen then uses this list to display the image, usually from top left to bottom right.
+Images represented in this fashion are known as _raster images_.
 
 <Image src="pixels.jpeg" />
 <ImageCredit>_Pinterest_ [^2]</ImageCredit>
