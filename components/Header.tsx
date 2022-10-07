@@ -32,6 +32,7 @@ const Header = () => {
   const hamburgerRef = useRef<HTMLDivElement>(null);
 
   const [isLg] = useMediaQuery('(min-width: 1024px)');
+  const [isMd] = useMediaQuery('(min-width: 768px)');
 
   return (
     <>
@@ -61,7 +62,9 @@ const Header = () => {
 
           <NextLink href="/">
             <Link borderRadius={6} px={2} tabIndex={1}>
-              <Heading onKeyDown={onClose}>CA103 - Hardware Report</Heading>
+              <Heading onKeyDown={onClose}>
+                CA103 {isMd && '- Hardware Report'}
+              </Heading>
             </Link>
           </NextLink>
         </HStack>
