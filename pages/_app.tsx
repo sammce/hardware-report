@@ -72,7 +72,7 @@ const components = {
   sup: Superscript,
 };
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <MDXProvider components={components}>
@@ -84,4 +84,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;
