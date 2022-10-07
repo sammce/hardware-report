@@ -1,22 +1,63 @@
-import { Meta, NextPrevLink } from '../components';
-
+import { Meta, NextPrevLink, Image, ImageCredit } from '../components';
+import Link from 'next/link';
 export const meta = {
   title: 'Internals - Hardware Report',
 };
 
 # Internals
 
+On this page we will be talking about what parts are inside of the monitor and how they work.
+
+## Pixels
+
+Pixels are the smallest controllable element of a picture displayed on a screen.
+Each pixel can produce a colour using different combinations of the colours red, green and blue, known as RGB.
+Each RGB value is represented using an 8-bit number, meaning the resulting colour is a 24 bit (3 byte) number,
+which is capable of representing $2^{24}$, or 16.7 million colours. (Wikipedia, 2022 [^1])
+
+<Image src="pixels.jpeg" />
+<ImageCredit>Paul DeFazio [^2]</ImageCredit>
+
+## Backlight
+
+The backlight sits behind the screen and is used to light up the image as LCDs do not light themselves up.
+Without the backlight monitors would not be usable when light is present as the image that the display gives off would be too dim (Wikipedia, 2022 [^3]).
+
+<Image src="backlight.png" />
+<ImageCredit>RTINGS, [^4]</ImageCredit>
+
+## Circuit board
+
+The circuit board is what the monitor uses to talk to the computer.
+Without this the monitor would not do anything when it is powered on as it would not know how to decipher the computers instructions (Wikipedia 3, 2022 [^5]).
+
+<Image src="./circuit-board.png" />
+<ImageCredit>Arbor Scientific [^6]</ImageCredit>
+
+## Connectors
+
+The connectors on the monitor is how the monitor receives the correct information from the computer, covered in <Link href="/connectors">Connectors</Link>.
+This is also how the monitor will receives power.
+
+<Image src="./ports.png" bg="white" />
+<ImageCredit>Elliot Fields, [^7]</ImageCredit>
+
+<br />
+<br />
+
 <NextPrevLink
-  next={{
-    href: 'firmware',
-    label: 'Firmware',
-  }}
   previous={{
     href: 'connectors',
     label: 'Connectors',
   }}
 />
 
-export default Meta(meta);
+[^1]: [Various Authors, (2022) “_Pixel”,_ Wikipedia. Paragraph 1](https://en.wikipedia.org/wiki/Pixel)
+[^2]: [DeFazio, P. "_Pixel close up_", Pinterest.](https://pin.it/5LTMnMR)
+[^3]: [Various Authors, (2022) “_Backlight_”, Wikipedia. Paragraph 1](https://en.wikipedia.org/wiki/Backlight#:~:text=Backlights)
+[^4]: [Demers, C, Di Giovanni, N. (2021). "_Plasma vs LCD & LED_", RTINGS.](https://www.rtings.com/tv/learn/lcd-vs-led-vs-plasma/how-they-work)
+[^5]: [Various Authors, (2022) “_Printed circuit board_”, Wikipedia. Paragraph 1](https://en.wikipedia.org/wiki/Printed_circuit_board)
+[^6]: [Arbor Scientific. "_Circuit Board 2_", Arbor Scientific.](https://www.arborsci.com/products/circuit-board2)
+[^7]: [Fields, E. (2015) "_How to setup dual monitors_", Zendesk.](https://fnu.zendesk.com/hc/en-us/articles/205041975-How-to-Setup-Dual-Monitors)
 
-;
+export default Meta(meta);

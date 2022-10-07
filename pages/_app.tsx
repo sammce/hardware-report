@@ -17,7 +17,7 @@ import HeadingWithWordCount from 'components/HeadingWithWordCount';
 import tv from '../util/themeVariable';
 import NavProvider, { useNavLink } from 'context/activeNavLink';
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import React, { AnchorHTMLAttributes, useEffect } from 'react';
 
 const HeadingFactory = (type: 'h2' | 'h3'): React.FC => {
   return function Heading({ children }) {
@@ -69,6 +69,13 @@ const components = {
   h1: HeadingWithWordCount,
   h2: HeadingFactory('h2'),
   h3: HeadingFactory('h3'),
+  a: (props: React.HTMLProps<HTMLAnchorElement>) => {
+    let target = '_blank';
+    if (props.href?.startsWith('#')) {
+      target = '_self';
+    }
+    return <a {...props} target={target} rel="noopener noreferrer" />;
+  },
   sup: Superscript,
 };
 

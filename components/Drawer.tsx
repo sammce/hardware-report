@@ -66,9 +66,6 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose, hamburgerRef }) => {
             Internals
           </DrawerLink>
 
-          <DrawerLink href="/firmware" onClose={onClose} icon={<CodeIcon />}>
-            Firmware
-          </DrawerLink>
           <Divider />
         </Box>
       </DrawerContent>

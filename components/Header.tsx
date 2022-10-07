@@ -4,12 +4,14 @@ import {
   HStack,
   Link,
   useMediaQuery,
+  Button,
 } from '@chakra-ui/react';
 import Hamburger from './Hamburger';
 import { useRef } from 'react';
 import tv from 'util/themeVariable';
 import Drawer from './Drawer';
 import NextLink from 'next/link';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const HeaderLink: React.FC<{ href: string }> = ({ href, children }) => {
   const path = window.location.pathname;
@@ -70,9 +72,19 @@ const Header = () => {
             <HeaderLink href="/types">Types</HeaderLink>
             <HeaderLink href="/connectors">Connectors</HeaderLink>
             <HeaderLink href="/internals">Internals</HeaderLink>
-            <HeaderLink href="/firmware">Firmware</HeaderLink>
           </HStack>
         )}
+
+        <Button
+          as="a"
+          href="https://github.com/sammce/hardware-report"
+          target="_blank"
+          borderRadius="full"
+          p={0}
+          mr={4}
+        >
+          <GitHubIcon />
+        </Button>
       </HStack>
 
       {!isLg && (

@@ -16,7 +16,10 @@ const HeaderWithWordCount: React.FC = ({ children }) => {
 
     for (const child of wrapper.children) {
       if (child.tagName === 'P') {
-        wc += child.innerHTML.split(' ').length;
+        // Removes parentheses containing references from word count
+        const withoutRefs = child.innerHTML.replaceAll(/\([^\)]+>\)/g, '');
+
+        wc += withoutRefs.split(' ').length;
       } else if (child.tagName === 'UL') {
         for (const _child of child.children) {
           if (_child.tagName === 'LI') {
@@ -48,7 +51,7 @@ const HeaderWithWordCount: React.FC = ({ children }) => {
         <Text mt={0} color="gray.500" fontSize="2xl">
           This page's word count:{' '}
           <Text as="span" fontWeight="bold" color="primary">
-            {wordCount}
+            ~{wordCount}
           </Text>
         </Text>
       )}
