@@ -66,10 +66,10 @@ const Header = () => {
 
         {isLg && (
           <HStack flexGrow={1} gap={6} justify="center">
-            <HeaderLink href="/">Home</HeaderLink>
-            <HeaderLink href="/internals">Internals</HeaderLink>
-            <HeaderLink href="/connectors">Connectors</HeaderLink>
+            <HeaderLink href="/">Basics</HeaderLink>
             <HeaderLink href="/types">Types</HeaderLink>
+            <HeaderLink href="/connectors">Connectors</HeaderLink>
+            <HeaderLink href="/internals">Internals</HeaderLink>
             <HeaderLink href="/firmware">Firmware</HeaderLink>
           </HStack>
         )}

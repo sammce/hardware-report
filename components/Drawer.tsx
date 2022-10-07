@@ -46,17 +46,7 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose, hamburgerRef }) => {
         >
           <Text variant="subheading">Pages</Text>
           <DrawerLink href="/" onClose={onClose} icon={<HomeIcon />}>
-            Home
-          </DrawerLink>
-          <DrawerLink
-            href="/internals"
-            onClose={onClose}
-            icon={<DeveloperBoardIcon />}
-          >
-            Internals
-          </DrawerLink>
-          <DrawerLink href="/connectors" onClose={onClose} icon={<CableIcon />}>
-            Connectors
+            Basics
           </DrawerLink>
           <DrawerLink
             href="/types"
@@ -65,6 +55,17 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose, hamburgerRef }) => {
           >
             Types
           </DrawerLink>
+          <DrawerLink href="/connectors" onClose={onClose} icon={<CableIcon />}>
+            Connectors
+          </DrawerLink>
+          <DrawerLink
+            href="/internals"
+            onClose={onClose}
+            icon={<DeveloperBoardIcon />}
+          >
+            Internals
+          </DrawerLink>
+
           <DrawerLink href="/firmware" onClose={onClose} icon={<CodeIcon />}>
             Firmware
           </DrawerLink>

@@ -5,3 +5,4 @@ export { default as Image } from './Image';
 export { default as ExamNumber } from './ExamNumber';
 export { default as NextPrevLink } from './NextPrevLink';
 export { default as ImageCredit } from './ImageCredit';
+export { default as Subtext } from './Subtext';

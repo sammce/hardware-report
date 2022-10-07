@@ -1,22 +1,66 @@
-import { Meta, NextPrevLink } from '../components';
+import { Meta, NextPrevLink, Image, ImageCredit, Subtext } from '../components';
 
 export const meta = {
   title: 'Types - Hardware Report',
 };
 
-# Types
+# Types of Displays
+
+On this page of the project will be having a look at the different types of displays that a monitor can have.
+Although there is many we will just be mentioning the more popular ones.
+
+## LCD
+
+All of the types of displays are derived from this technology, they just implement it in different ways.
+The liquid crystals in this display don't actually emit light themselves, so this type of display uses a backlight to light up the crystals so that you can see the image.
+Overall LCD is a good display (Orient display, 2022 [^1]).
+
+<Image src="./lcd.png" w={700} />
+<ImageCredit>Xenarc [^2]</ImageCredit>
+
+## IPS
+
+IPS is a type of LCD display that stands for In Plane Switching.
+This means that all the crystals are aligned so that they are parallel (ViewSonic, 2022 [^3]). This allow for an IPS display to be extremely colour accurate.
+An advantage of an IPS display is that they have a low response time (Harding, 2020 [^4]).
+
+## TN
+
+A TN display or a Twisted Nematic display is again a form of LCD technology.
+The TN panel works by polarizing light as it enters.
+An advantage of the TN display is that it is very cheap to manufacture and has a fast response time (Harding, 2018 [^5]).
+
+## VA
+
+A VA display or a vertical alignment display is from the LCD family as well.
+This type of display works by having the LCD between two pieces of glass with crystals being naturally vertical without electricity present.
+Then when electricity is introduced the crystals go horizontal allowing light to pass through giving you an image (Eizo, 2022 [^6]).
+
+|                                | IPS                                    | TN                                      | VA                                      |
+| ------------------------------ | -------------------------------------- | --------------------------------------- | --------------------------------------- |
+| <Subtext>Performance</Subtext> | Low response time<br />OK refresh rate | High refresh rate<br/>Low response time | Low response time<br />Low refresh rate |
+| <Subtext>Display</Subtext>     | Best colour                            | Best depth                              | Worst viewing angles and colours        |
+| <Subtext>Cost</Subtext>        | Most expensive                         | Cheapest                                | Not cheap but not expensive.            |
+
+<br />
+<br />
 
 <NextPrevLink
   next={{
-    href: 'firmware',
-    label: 'Firmware',
-  }}
-  previous={{
     href: 'connectors',
     label: 'Connectors',
+  }}
+  previous={{
+    href: '/',
+    label: 'Basics',
   }}
 />
 
 export default Meta(meta);
 
-;
+[^1]: [Orient display (2022). "What is an LCD display: An introduction to LCD technology", Orient Display.](https://www.orientdisplay.com/knowledge-base/lcd-basics/what-is-lcd-liquid-crystal-display/)
+[^2]: [Xenarc, (2022). "LCD Technology", Xenarc.](https://www.xenarc.com/lcd-technology.html)
+[^3]: [ViewSonic (2022). "What is an IPS Monitor? Monitor Panel Types Explained", ViewSonic.](<https://www.viewsonic.com/library/photography/what-is-an-ips-monitor-panel/#:~:text=of%20panel%20technology.-,What%20is%20an%20IPS%20Monitor%3F%20(IPS%20Monitor%20Technology),the%20limitations%20of%20TN%20panels>)
+[^4]: [Scharon Harding (2020). "What is an IPS Monitor? A Basic Definition", Tom's Hardware.](https://www.tomshardware.com/reviews/ips-in-plane-switching-definition,5748.html)
+[^5]: [Scharon Harding (2018). "What is a TN Display? A Basic Definition", Tom's Hardware.](https://www.tomshardware.com/reviews/tn-panel-twisted-nematic-definition,5767.html)
+[^6]: [Eizo (2022). "VA (Vertical Alignment)", Eizo.](https://www.eizoglobal.com/support/glossary/v/va/#:~:text=A%20type%20of%20LCD%20panel,of%20light%20from%20the%20backlight)

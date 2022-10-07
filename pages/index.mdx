@@ -9,15 +9,15 @@ import { Center, Link } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 export const meta = {
-  title: 'Monitors - Hardware Report',
+  title: 'Basics - Hardware Report',
 };
 
-# Monitors
+# Monitor Basics
 
 ## Overview
 
 A monitor is a piece of computer hardware responsible for showing the user visual information from a computer,
-which it is connected to via a cable. These cables will be discussed in <NextLink href="/connectors">Connectors</NextLink>
+which it is connected to via a cable.
 
 Monitors are similar to TVs but usually display information at a much higher resolution.
 They also typically sit atop a desk rather than connected to a wall.
@@ -32,11 +32,17 @@ They are sometimes referred to as screens or displays. (_Lifewire_[^1]).
 
 <ImageCredit>Walmart [^2]</ImageCredit>
 
+## Resolution
+
+A monitor's resolution refers to the amount of pixels it can display both horizontally and vertically.
+For instance, a resolution of 1920x1080 (known more commonly as 1080p) means that the monitor can display 1920 pixels horizontally and 1080 pixels vertically.
+We'll cover pixels in <NextLink href="/internals">Internals</NextLink>.
+
 ## History
 
 ### CRT
 
-Originally, monitors were made using a _cathode ray tube_ (CRT) to display information,
+Originally, monitors were made using a _cathode ray tube_ (CRT) to display information from the computer,
 which involved directing a beam of electrons at a phosphor-coated screen using a magnetic field.
 
 <Image
@@ -52,19 +58,19 @@ which involved directing a beam of electrons at a phosphor-coated screen using a
 
 This form of display had its limitations, however, and was replaced by _liquid crystal displays_ (LCD) monitors.
 CRT displays consumed more power, were physically larger than LCD displays and had a much lower resolution,
-meaning the images they produced looked worse. (_GeeksforGeeks_ [^5])
+meaning the images they produced looked worse (_GeeksforGeeks_ [^5]).
 
 <NextPrevLink
   next={{
-    href: 'internals',
-    label: 'Internals',
+    href: 'types',
+    label: 'Types of Displays',
   }}
 />
 
-[^1]: [Adapted from Fisher, T. (2020). "What is a Monitor?", Lifewire. Paragraphs 1-2.](https://www.lifewire.com/what-is-a-monitor-2626061)
-[^2]: [Walmart. (2021). "HP 22-inch FHD Monitor - Black", Walmart.](https://www.walmart.com/ip/HP-22-inch-FHD-Monitor-Black/55400000)
-[^3]: [Science Facts. (2020). "Cathode Ray Tube (CRT)", Science Facts.](https://www.sciencefacts.net/cathode-ray-tube-crt.html)
-[^4]: [J. (2019). "CRT Monitors Overview", Laptop Pics.](https://www.laptop-pics.com/crt-cathode-ray-tube-monitors-overview/)
-[^5]: [Adapted from MKS075. (2022). "Difference between CRT and LCD", GeeksforGeeks. Paragraph 2](https://www.geeksforgeeks.org/difference-between-crt-and-lcd/)
+[^1]: [Adapted from Fisher, T, (2020). "What is a Monitor?", Lifewire. Paragraphs 1-2.](https://www.lifewire.com/what-is-a-monitor-2626061)
+[^2]: [Walmart, (2021). "HP 22-inch FHD Monitor - Black", Walmart.](https://www.walmart.com/ip/HP-22-inch-FHD-Monitor-Black/55400000)
+[^3]: [Science Facts, (2020). "Cathode Ray Tube (CRT)", Science Facts.](https://www.sciencefacts.net/cathode-ray-tube-crt.html)
+[^4]: [J, (2019). "CRT Monitors Overview", Laptop Pics.](https://www.laptop-pics.com/crt-cathode-ray-tube-monitors-overview/)
+[^5]: [Adapted from MKS075, (2022). "Difference between CRT and LCD", GeeksforGeeks. Paragraph 2](https://www.geeksforgeeks.org/difference-between-crt-and-lcd/)
 
 export default Meta(meta);
