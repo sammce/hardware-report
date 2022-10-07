@@ -37,14 +37,7 @@ const HeaderWithWordCount: React.FC = ({ children }) => {
       <h1 style={{ lineHeight: 1.2 }}>{children}</h1>
       {path === '/' && (
         <Text color="gray.500" fontSize="2xl">
-          By{' '}
-          <b>
-            <u>Sam McElligott</u>
-          </b>{' '}
-          &amp;{' '}
-          <b>
-            <u>Dylan Martin</u>
-          </b>
+          By <b>Sam McElligott</b> &amp; <b>Dylan Martin</b>
         </Text>
       )}
       {wordCount !== 0 && (
